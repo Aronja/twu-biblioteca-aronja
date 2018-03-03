@@ -19,9 +19,7 @@ public class BibliotecaApp {
         Book b1 = new Book("The Hobbit", "J.R.R. Tolkien", 1937);
         Book b2 = new Book("Who owns the future", "Jaron Lanier", 2013);
         library.addItems(b1, b2);
-        b1.getDetails();
-        b2.getDetails();
-        //Library.listOfBooks();
+        library.listOfBooks();
         return library;
     }
 }
