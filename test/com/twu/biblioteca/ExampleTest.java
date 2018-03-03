@@ -1,13 +1,17 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.WelcomeMessage;
+import com.twu.biblioteca.BibliotecaApp;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class ExampleTest {
 
-    @Test
-    public void test() {
-        assertEquals(1, 1);
-    }
+   /* @Test
+    public void printsCorrectWelcomeMessage() {
+        String answer = "Y";
+        assertEqual(new WelcomeMessage.printAnswer("Y", answer));
+    } */
 }
+
