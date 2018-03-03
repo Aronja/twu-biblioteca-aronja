@@ -11,7 +11,10 @@ public class BibliotecaApp {
         WelcomeMessage message = new WelcomeMessage();
         message.printMessage();
         message.printAnswer();
+        MainMenu mainmenu = new MainMenu();
+        mainmenu.printMenu();
         com.twu.biblioteca.Library library = setUpLibrary();
+
     }
 
     private Library setUpLibrary() {

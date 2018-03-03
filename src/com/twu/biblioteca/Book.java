@@ -14,7 +14,6 @@ public class Book implements LibraryItem{
 
     public String getDetails(){
         String details = Title + " | " + Author + " | " + Year ;
-        System.out.println(details);
         return details;
     }
 }
