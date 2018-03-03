@@ -16,4 +16,8 @@ public class Book implements LibraryItem{
         String details = Title + " | " + Author + " | " + Year ;
         return details;
     }
+
+    public String getTitle(){
+        return Title;
+    }
 }

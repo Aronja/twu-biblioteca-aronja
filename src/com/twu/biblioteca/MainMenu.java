@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MainMenu {
 
     public void printMenu() {
+        System.out.println("Main Menu");
         System.out.println("Would you like to search for Books? Then type B");
 
         String bookmenu;

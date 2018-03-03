@@ -14,7 +14,7 @@ public class BibliotecaApp {
         MainMenu mainmenu = new MainMenu();
         mainmenu.printMenu();
         Library library = setUpLibrary();
-        System.out.println("Type C to checkout a book");
+        System.out.println("Type Booktitle to checkout a book");
         library.checkoutBook();
 
     }

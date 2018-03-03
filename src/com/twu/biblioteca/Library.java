@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class Library {
 
     private ArrayList<LibraryItem> items;
+    private ArrayList<LibraryItem> checkedOutItems = new ArrayList<LibraryItem>();
+
 
     public Library() {
         this.items = new ArrayList<LibraryItem>();
@@ -42,11 +44,23 @@ public class Library {
             Scanner in = new Scanner(System.in);
 
             checkout = in.nextLine();
+            String Title = "The Hobbit";
 
-            if (checkout.equals("C")){
+            if (checkout.equals(Title)){
                 System.out.println("You have checked out a book");
+                removeFromLibrary(Title);
             } else {
                 System.out.println("This book is not available!");
             }
         }
+
+    private void removeFromLibrary(String Title) {
+        for (LibraryItem item : new ArrayList<LibraryItem>(items)){
+            if(item.getTitle().equals(Title)){
+                items.remove(item);
+                listOfBooks();
+                checkedOutItems.add(item);
+            }
+        }
+    }
 }
