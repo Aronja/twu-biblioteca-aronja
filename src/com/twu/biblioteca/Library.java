@@ -45,6 +45,7 @@ public class Library {
 
             checkout = in.nextLine();
             String Title = "The Hobbit";
+            //String Title = getTitle();
 
             if (checkout.equals(Title)){
                 System.out.println("You have checked out a book");
@@ -60,6 +61,33 @@ public class Library {
                 items.remove(item);
                 listOfBooks();
                 checkedOutItems.add(item);
+            }
+        }
+    }
+
+    public void returnBook() {
+        String returnBook;
+        Scanner in = new Scanner(System.in);
+
+        returnBook = in.nextLine();
+        String Title = "The Hobbit";
+        //String Title = getTitle();
+
+        if (returnBook.equals(Title)){
+            System.out.println("You have returned a book");
+            returnToLibrary(Title);
+            listOfBooks();
+        } else {
+            System.out.println("This book was not part of this library!");
+        }
+
+    }
+
+    private void returnToLibrary(String title) {
+        for (LibraryItem item : new ArrayList<LibraryItem>(checkedOutItems)){
+            if(item.getTitle().equals(title)){
+                checkedOutItems.remove(item);
+                items.add(item);
             }
         }
     }
