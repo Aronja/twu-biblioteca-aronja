@@ -2,6 +2,7 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Library {
@@ -35,4 +36,17 @@ public class Library {
         }
         return books;
     }
+
+    public void checkoutBook() {
+            String checkout;
+            Scanner in = new Scanner(System.in);
+
+            checkout = in.nextLine();
+
+            if (checkout.equals("C")){
+                System.out.println("You have checked out a book");
+            } else {
+                System.out.println("This book is not available!");
+            }
+        }
 }

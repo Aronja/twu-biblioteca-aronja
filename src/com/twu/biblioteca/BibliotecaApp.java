@@ -13,7 +13,9 @@ public class BibliotecaApp {
         message.printAnswer();
         MainMenu mainmenu = new MainMenu();
         mainmenu.printMenu();
-        com.twu.biblioteca.Library library = setUpLibrary();
+        Library library = setUpLibrary();
+        System.out.println("Type C to checkout a book");
+        library.checkoutBook();
 
     }
 

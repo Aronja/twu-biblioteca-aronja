@@ -15,7 +15,7 @@ public class MainMenu {
         if (bookmenu.equals("B")){
             System.out.println("Booklist");
         } else {
-            System.out.println("Please type B to view our Booklist!");
+            System.out.println("Select a valid option! (Please type B to view our Booklist!)");
         }
     }
 }
