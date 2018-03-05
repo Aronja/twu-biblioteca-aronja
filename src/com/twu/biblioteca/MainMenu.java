@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    public void printMenu() {
+    public String printMenu() {
         System.out.println("Main Menu");
         System.out.println("Would you like to search for Books? Then type B");
 
@@ -18,5 +18,6 @@ public class MainMenu {
         } else {
             System.out.println("Select a valid option! (Please type B to view our Booklist!)");
         }
+        return bookmenu;
     }
 }

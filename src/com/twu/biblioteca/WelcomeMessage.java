@@ -4,14 +4,15 @@ import java.util.Scanner;
 
 public class WelcomeMessage {
 
-    public void printMessage(){
+    public String printMessage(){
         System.out.println(
                 "Welcome to our beautiful library! Are you interested in books? \n" +
                         "Type Y to few our books or type Q to quit this session!"
         );
+        return null;
     }
 
-    public void printAnswer(){
+    public String printAnswer(){
         String answer;
         Scanner in = new Scanner(System.in);
 
@@ -25,5 +26,6 @@ public class WelcomeMessage {
         } else {
             System.out.println("Please type Y or Q!");
         }
+        return answer;
     }
 }

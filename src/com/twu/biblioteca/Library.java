@@ -71,6 +71,7 @@ public class Library {
 
         returnBook = in.nextLine();
         String Title = "The Hobbit";
+        //still hardcoded, implement getTitle method to get the Title
         //String Title = getTitle();
 
         if (returnBook.equals(Title)){
