@@ -39,57 +39,62 @@ public class Library {
         return books;
     }
 
+
     public void checkoutBook() {
-            String checkout;
-            Scanner in = new Scanner(System.in);
+        String checkout;
+        String Title="";
+        Scanner in = new Scanner(System.in);
 
-            checkout = in.nextLine();
-            String Title = "The Hobbit";
-            //String Title = getTitle();
-
-            if (checkout.equals(Title)){
-                System.out.println("You have checked out a book");
-                removeFromLibrary(Title);
-            } else {
-                System.out.println("This book is not available!");
+        checkout = in.nextLine();
+        for (LibraryItem item : new ArrayList<LibraryItem>(items)){
+            if (item.getTitle().equals(checkout)){
+                removeFromLibrary(item);
+                Title = item.getTitle();
+                break;
             }
         }
 
-    private void removeFromLibrary(String Title) {
-        for (LibraryItem item : new ArrayList<LibraryItem>(items)){
-            if(item.getTitle().equals(Title)){
-                items.remove(item);
-                listOfBooks();
-                checkedOutItems.add(item);
-            }
+        if (!Title.equals("")){
+            System.out.println("You have checked out a book");
+        }
+        else {
+            System.out.println("This book is not available!");
         }
     }
+
+    private void removeFromLibrary(LibraryItem item) {
+        items.remove(item);
+        listOfBooks();
+        checkedOutItems.add(item);
+    }
+
 
     public void returnBook() {
         String returnBook;
+        String Title ="";
         Scanner in = new Scanner(System.in);
 
         returnBook = in.nextLine();
-        String Title = "The Hobbit";
-        //still hardcoded, implement getTitle method to get the Title
-        //String Title = getTitle();
-
-        if (returnBook.equals(Title)){
-            System.out.println("You have returned a book");
-            returnToLibrary(Title);
-            listOfBooks();
-        } else {
-            System.out.println("This book was not part of this library!");
-        }
-
-    }
-
-    private void returnToLibrary(String title) {
-        for (LibraryItem item : new ArrayList<LibraryItem>(checkedOutItems)){
-            if(item.getTitle().equals(title)){
-                checkedOutItems.remove(item);
-                items.add(item);
+        for (LibraryItem checkedOutItems : new ArrayList<LibraryItem>(items)){
+            if (checkedOutItems.getTitle().equals(returnBook)){
+                returnToLibrary(checkedOutItems);
+                Title = checkedOutItems.getTitle();
+                break;
             }
         }
+
+        if (!Title.equals("")){
+            System.out.println("You have returned a book");
+        }
+        else {
+            System.out.println("This book was not part of this library!");
+        }
     }
+
+    private void returnToLibrary(LibraryItem item) {
+        checkedOutItems.remove(item);
+        listOfBooks();
+        items.add(item);
+    }
+
 }

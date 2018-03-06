@@ -2,6 +2,8 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Objects;
 
 import static org.junit.Assert.*;
@@ -19,19 +21,34 @@ public class InputTest {
     }
 
     @Test
-    public void TestWhetherYesPrintsOutAnswer() {
-
+    public void TestWhetherYprintsAnswer() {
         WelcomeMessage message = new WelcomeMessage();
-        String answer = "Y";
+        String answer;
+
+        {
+            answer = "Y";
+        }
+
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
+        System.setIn(in);
         String givenAnswer = message.printAnswer();
+
         assertEquals(answer, givenAnswer);
     }
 
     @Test
-    public void TestQuitFunction() {
+    public void TestWhetherQprintsAnswer() {
         WelcomeMessage message = new WelcomeMessage();
-        String answer = "Q";
+        String answer;
+
+        {
+            answer = "Q";
+        }
+
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
+        System.setIn(in);
         String givenAnswer = message.printAnswer();
+
         assertEquals(answer, givenAnswer);
     }
 
@@ -39,9 +56,18 @@ public class InputTest {
     public void TestWhetherPrintsMainMenu() {
         MainMenu mainmenu = new MainMenu();
         String MainMenu = mainmenu.printMenu();
-        String Menu = null;
-        assertEquals(Menu, MainMenu);
+        {
+            MainMenu = "B";
+        }
+
+        InputStream in = new ByteArrayInputStream(MainMenu.getBytes());
+        System.setIn(in);
+        String givenAnswer = mainmenu.printMenu();
+
+        assertEquals(mainmenu, givenAnswer);
     }
+
+}
 
 
 
