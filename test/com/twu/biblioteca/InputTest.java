@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Objects;
 
 import static org.junit.Assert.*;
 
@@ -67,7 +66,7 @@ public class InputTest {
 
         assertEquals(answer, givenAnswer);
     }
-    
+
 
     @Test
     public void TestWhetherPrintsMainMenu() {
@@ -82,6 +81,11 @@ public class InputTest {
         String givenAnswer = mainmenu.printMenu();
 
         assertEquals(answer, givenAnswer);
+    }
+
+    @Test
+    public void TestsWhetherLibraryIsSetUp() {
+        //pass
     }
 
 }

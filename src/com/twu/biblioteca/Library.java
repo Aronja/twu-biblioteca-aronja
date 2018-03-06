@@ -75,7 +75,7 @@ public class Library {
         Scanner in = new Scanner(System.in);
 
         returnBook = in.nextLine();
-        for (LibraryItem checkedOutItems : new ArrayList<LibraryItem>(items)){
+        for (LibraryItem checkedOutItems : new ArrayList<LibraryItem>(checkedOutItems)){
             if (checkedOutItems.getTitle().equals(returnBook)){
                 returnToLibrary(checkedOutItems);
                 Title = checkedOutItems.getTitle();
