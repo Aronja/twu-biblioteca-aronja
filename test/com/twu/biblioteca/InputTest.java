@@ -53,18 +53,35 @@ public class InputTest {
     }
 
     @Test
-    public void TestWhetherPrintsMainMenu() {
-        MainMenu mainmenu = new MainMenu();
-        String MainMenu = mainmenu.printMenu();
+    public void TestWhetherOtherLetterprintsAnswer() {
+        WelcomeMessage message = new WelcomeMessage();
+        String answer;
+
         {
-            MainMenu = "B";
+            answer = "K";
         }
 
-        InputStream in = new ByteArrayInputStream(MainMenu.getBytes());
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
+        System.setIn(in);
+        String givenAnswer = message.printAnswer();
+
+        assertEquals(answer, givenAnswer);
+    }
+    
+
+    @Test
+    public void TestWhetherPrintsMainMenu() {
+        MainMenu mainmenu = new MainMenu();
+        String answer;
+        {
+            answer = "B";
+        }
+
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
         System.setIn(in);
         String givenAnswer = mainmenu.printMenu();
 
-        assertEquals(mainmenu, givenAnswer);
+        assertEquals(answer, givenAnswer);
     }
 
 }
