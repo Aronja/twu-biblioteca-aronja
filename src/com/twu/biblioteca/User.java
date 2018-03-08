@@ -2,33 +2,33 @@ package com.twu.biblioteca;
 
 public class User {
 
-    private String libraryNumber;
-    private String password;
-    private String name;
-    private String email;
-    private String number;
+    private String LibraryNumber;
+    private String Password;
+    private String Name;
+    private String Email;
+    private String Number;
 
-    public User(String libraryNumber,
-                String password,
-                String name,
-                String email,
-                String number){
-        this.libraryNumber = libraryNumber;
-        this.password = password;
-        this.name = name;
-        this.email = email;
-        this.number = number;
+    public User(String LibraryNumber,
+                String Password,
+                String Name,
+                String Email,
+                String Number){
+        this.LibraryNumber = LibraryNumber;
+        this.Password = Password;
+        this.Name = Name;
+        this.Email = Email;
+        this.Number = Number;
     }
 
-    public boolean authentication(String libraryNumber, String password){
-        return libraryNumber.equals(this.libraryNumber) &&
-                password.equals(this.password);
+    public boolean authentication(String LibraryNumber, String Password){
+        return LibraryNumber.equals(this.LibraryNumber) &&
+                Password.equals(this.Password);
     }
 
     public String getDetails(){
-        String details = "name: " + name + "\n" +
-                "email: " + email + "\n" +
-                "number: " + number + "\n";
+        String details = "Name: " + Name + "\n" +
+                "Email: " + Email + "\n" +
+                "Number: " + Number + "\n";
         return details;
     }
 }

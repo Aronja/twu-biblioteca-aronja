@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class BibliotecaApp {
 
     public static void main(String[] args) {
@@ -11,6 +13,18 @@ public class BibliotecaApp {
         WelcomeMessage message = new WelcomeMessage();
         message.printMessage();
         message.printAnswer();
+        managingUsers Manager = setupUser();
+        String libraryNumber = getLibraryNumber();
+        String password = getPassword();
+
+        if(!Manager.logIn(libraryNumber, password)){
+            libraryNumber = getLibraryNumber();
+            password = getPassword();
+            Manager.logIn(libraryNumber, password);
+        } else {
+            System.out.println("These are not the right credentials, please try again");
+        }
+
         MainMenu mainmenu = new MainMenu();
         mainmenu.printMenu();
         Library library = setUpLibrary();
@@ -18,9 +32,6 @@ public class BibliotecaApp {
         library.checkoutBook();
         System.out.println("Type the Title to return a book or movie");
         library.returnBook();
-
-
-
     }
 
     private Library setUpLibrary() {
@@ -33,6 +44,30 @@ public class BibliotecaApp {
         library.listOfBooks();
         library.listMovies();
         return library;
+    }
+
+    private managingUsers setupUser() {
+        User Astrid = new User(
+                "89375881",
+                "biblioteca",
+                "Astrid",
+                "astrid@astrid.com",
+                "3454459453");
+        managingUsers Manager = new managingUsers();
+        Manager.addUsers(Astrid);
+        return Manager;
+    }
+
+    private String getLibraryNumber(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your library number: ");
+        return scanner.next();
+    }
+
+    private String getPassword(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your password: ");
+        return scanner.next();
     }
 }
 

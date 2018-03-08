@@ -12,15 +12,15 @@ public class managingUsers {
     }
 
     public void addUsers(User... usersToAdd){
-        for(User u : usersToAdd){
-            users.add(u);
+        for(User user : usersToAdd){
+            users.add(user);
         }
     }
 
-    public boolean logIn(String libraryNumber, String password){
-        for(User u : users){
-            if(u.authentication(libraryNumber, password)) {
-                currentUser = u;
+    public boolean logIn(String LibraryNumber, String Password){
+        for(User user : users){
+            if(user.authentication(LibraryNumber, Password)) {
+                currentUser = user;
                 return true;
             }
         }
