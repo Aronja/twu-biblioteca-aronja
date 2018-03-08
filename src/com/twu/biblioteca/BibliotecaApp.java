@@ -27,8 +27,11 @@ public class BibliotecaApp {
         Library library = new Library();
         Book b1 = new Book("The Hobbit", "J.R.R. Tolkien", 1937);
         Book b2 = new Book("Who owns the future", "Jaron Lanier", 2013);
-        library.addItems(b1, b2);
+        Movie m1 = new Movie("Lord of the Rings", "Peter Jackson", "10", 2001);
+        Movie m2 = new Movie ("Fight Club", "another famous person", "8", 1999);
+        library.addItems(b1, b2, m1, m2);
         library.listOfBooks();
+        library.listMovies();
         return library;
     }
 }

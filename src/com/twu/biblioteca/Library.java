@@ -22,9 +22,17 @@ public class Library {
     }
 
     public void listOfBooks() {
-        System.out.println("Find the available books here");
+        System.out.println("Find the available books and movies here");
         System.out.println("Author   |   Title  |   Year");
         for (LibraryItem item : books()) {
+            System.out.println(item.getDetails());
+        }
+    }
+
+    public void listMovies(){
+        System.out.println("Here are the available movies");
+        System.out.println("Title   |   Director   |   Rating   |   Year");
+        for (LibraryItem item : movies()){
             System.out.println(item.getDetails());
         }
     }
@@ -38,6 +46,17 @@ public class Library {
         }
         return books;
     }
+
+    private ArrayList<LibraryItem> movies(){
+        ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
+        for(LibraryItem item : items){
+            if(item instanceof Movie){
+                movies.add(item);
+            }
+        }
+        return movies;
+    }
+
 
 
     public void checkoutBook() {
@@ -65,6 +84,7 @@ public class Library {
     private void removeFromLibrary(LibraryItem item) {
         items.remove(item);
         listOfBooks();
+        listMovies();
         checkedOutItems.add(item);
     }
 
@@ -94,6 +114,7 @@ public class Library {
     private void returnToLibrary(LibraryItem item) {
         checkedOutItems.remove(item);
         listOfBooks();
+        listMovies();
         items.add(item);
     }
 
