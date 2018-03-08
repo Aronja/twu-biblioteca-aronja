@@ -69,7 +69,7 @@ public class InputTest {
 
 
     @Test
-    public void TestWhetherPrintsMainMenu() {
+    public void TestWhetherPrintsMainMenuwithB() {
         MainMenu mainmenu = new MainMenu();
         String answer;
         {
@@ -84,10 +84,19 @@ public class InputTest {
     }
 
     @Test
-    public void TestsWhetherLibraryIsSetUp() {
-        //pass
-    }
+    public void TestWhetherPrintsMainMenuwithM() {
+        MainMenu mainmenu = new MainMenu();
+        String answer;
+        {
+            answer = "M";
+        }
 
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
+        System.setIn(in);
+        String givenAnswer = mainmenu.printMenu();
+
+        assertEquals(answer, givenAnswer);
+    }
 }
 
 

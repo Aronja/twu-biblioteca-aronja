@@ -14,9 +14,9 @@ public class BibliotecaApp {
         MainMenu mainmenu = new MainMenu();
         mainmenu.printMenu();
         Library library = setUpLibrary();
-        System.out.println("Type the Booktitle to checkout a book");
+        System.out.println("Type the Title to checkout a book or movie");
         library.checkoutBook();
-        System.out.println("Type the Booktitle to return a book");
+        System.out.println("Type the Title to return a book or movie");
         library.returnBook();
 
 
@@ -28,7 +28,7 @@ public class BibliotecaApp {
         Book b1 = new Book("The Hobbit", "J.R.R. Tolkien", 1937);
         Book b2 = new Book("Who owns the future", "Jaron Lanier", 2013);
         Movie m1 = new Movie("Lord of the Rings", "Peter Jackson", "10", 2001);
-        Movie m2 = new Movie ("Fight Club", "another famous person", "8", 1999);
+        Movie m2 = new Movie ("Fight Club", "David Fincher", "8", 1999);
         library.addItems(b1, b2, m1, m2);
         library.listOfBooks();
         library.listMovies();

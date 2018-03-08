@@ -27,7 +27,7 @@ public class LibraryTest {
         System.out.println(items.size());
         library.checkoutBook();
         System.out.println(items.size());
-        assertEquals(items.size(), 1);
+        assertEquals(items.size(), 3);
 
     }
 
@@ -35,7 +35,7 @@ public class LibraryTest {
         System.out.println(items.size());
         library.returnBook();
         System.out.println(items.size());
-        assertEquals(items.size(), 2);
+        assertEquals(items.size(), 4);
 
     }
 
