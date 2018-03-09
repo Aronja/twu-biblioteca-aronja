@@ -29,6 +29,7 @@ public class User {
         String details = "Name: " + Name + "\n" +
                 "Email: " + Email + "\n" +
                 "Number: " + Number + "\n";
+        System.out.println(details);
         return details;
     }
 }

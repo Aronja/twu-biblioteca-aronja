@@ -9,6 +9,9 @@ public class BibliotecaApp {
         biblioteca.run();
     }
 
+    public User userLogged;
+
+
     public void run() {
         WelcomeMessage message = new WelcomeMessage();
         message.printMessage();
@@ -69,6 +72,10 @@ public class BibliotecaApp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your password: ");
         return scanner.next();
+    }
+
+    public String getUserDetails() {
+        return userLogged.getDetails();
     }
 }
 
