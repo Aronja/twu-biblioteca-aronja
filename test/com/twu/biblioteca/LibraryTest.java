@@ -2,6 +2,8 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -24,18 +26,29 @@ public class LibraryTest {
 
 
     @Test public void TestBookCheckOutFunction() {
-        System.out.println(items.size());
+        String answer;
+        {
+            answer = "The Hobbit";
+        }
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
+        System.setIn(in);
         library.checkoutBook();
-        System.out.println(items.size());
-        assertEquals(items.size(), 3);
+        System.out.println((library.getItems().size()));
+        assertEquals((library.getItems().size()), 1);
 
     }
 
+
     @Test public void TestBookReturnFunction() {
-        System.out.println(items.size());
+        String answer;
+        {
+            answer = "The Hobbit";
+        }
+        InputStream in = new ByteArrayInputStream(answer.getBytes());
+        System.setIn(in);
         library.returnBook();
-        System.out.println(items.size());
-        assertEquals(items.size(), 4);
+        System.out.println((library.getItems().size()));
+        assertEquals((library.getItems().size()), 2);
 
     }
 

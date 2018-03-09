@@ -10,6 +10,10 @@ public class Library {
     private ArrayList<LibraryItem> items;
     private ArrayList<LibraryItem> checkedOutItems = new ArrayList<LibraryItem>();
 
+    public ArrayList<LibraryItem> getItems() {
+        return this.items;
+    }
+
 
     public Library() {
         this.items = new ArrayList<LibraryItem>();
