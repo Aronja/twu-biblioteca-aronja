@@ -22,7 +22,7 @@ public class BibliotecaApp {
             password = getPassword();
             Manager.logIn(libraryNumber, password);
         } else {
-            System.out.println("These are not the right credentials, please try again");
+            System.out.println("Thanks, you are logged in!");
         }
 
         MainMenu mainmenu = new MainMenu();
@@ -55,6 +55,7 @@ public class BibliotecaApp {
                 "3454459453");
         managingUsers Manager = new managingUsers();
         Manager.addUsers(Astrid);
+        Astrid.getDetails();
         return Manager;
     }
 
