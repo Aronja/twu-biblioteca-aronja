@@ -14,7 +14,7 @@ public class BibliotecaApp {
         WelcomeMessage message = new WelcomeMessage();
         message.printMessage();
         message.printAnswer();
-        Login();
+        setupLogin();
         MainMenu mainmenu = new MainMenu();
         mainmenu.printMenu();
         Library library = setUpLibrary();
@@ -22,7 +22,7 @@ public class BibliotecaApp {
         library.returnBook();
     }
 
-    private void Login() {
+    private void setupLogin() {
         managingUsers Manager = setupUser();
         String libraryNumber = getLibraryNumber();
         String password = getPassword();

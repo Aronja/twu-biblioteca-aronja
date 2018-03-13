@@ -80,6 +80,8 @@ public class Library {
 
         if (!Title.equals("")){
             System.out.println("You have checked out a book");
+            managingUsers Manager = new managingUsers();
+            Manager.getCurrentUser();
         }
         else {
             System.out.println("This book is not available!");
@@ -109,10 +111,10 @@ public class Library {
             }
         }
 
-        //This does not work yet!
         if (!Title.equals("")){
             System.out.println("You have returned a book");
-         //   User.getDetails();
+            managingUsers Manager = new managingUsers();
+            Manager.getCurrentUser();
         }
         else {
             System.out.println("This book was not part of this library!");

@@ -27,4 +27,9 @@ public class managingUsers {
         }
         return false;
     }
+
+    public User getCurrentUser() {
+        System.out.println(currentUser.getDetails());
+        return currentUser;
+    }
 }
