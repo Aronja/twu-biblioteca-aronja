@@ -79,11 +79,12 @@ public class BibliotecaApp {
     //This is a try to print out Details if the User is logged in only, same function or getDetails Function should be
     // used to print Details when book is checked out/ returned
 
-    public String printDetails() {
-        if (userLogged) {
-            User.getDetails();
-        }
+   // public String printDetails() {
+     //   if (userLogged) {
+       //     User.getDetails();
+       // }
+    // }
     }
 
-}
+
 
