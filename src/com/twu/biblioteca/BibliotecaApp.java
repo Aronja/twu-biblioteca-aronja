@@ -9,7 +9,7 @@ public class BibliotecaApp {
         biblioteca.run();
     }
 
-    public User userLogged;
+    public boolean userLogged = false;
 
 
     public void run() {
@@ -26,11 +26,13 @@ public class BibliotecaApp {
             Manager.logIn(libraryNumber, password);
         } else {
             System.out.println("Thanks, you are logged in!");
+            userLogged = true;
         }
 
         MainMenu mainmenu = new MainMenu();
         mainmenu.printMenu();
         Library library = setUpLibrary();
+        //This System prints could go inside the checkout and return functions!!
         System.out.println("Type the Title to checkout a book or movie");
         library.checkoutBook();
         System.out.println("Type the Title to return a book or movie");
@@ -50,6 +52,7 @@ public class BibliotecaApp {
     }
 
     private managingUsers setupUser() {
+        //add a second User!!
         User Astrid = new User(
                 "89375881",
                 "biblioteca",
@@ -58,7 +61,6 @@ public class BibliotecaApp {
                 "3454459453");
         managingUsers Manager = new managingUsers();
         Manager.addUsers(Astrid);
-        Astrid.getDetails();
         return Manager;
     }
 
@@ -74,8 +76,14 @@ public class BibliotecaApp {
         return scanner.next();
     }
 
-    public String getUserDetails() {
-        return userLogged.getDetails();
+    //This is a try to print out Details if the User is logged in only, same function or getDetails Function should be
+    // used to print Details when book is checked out/ returned
+
+    public String printDetails() {
+        if (userLogged) {
+            User.getDetails();
+        }
     }
+
 }
 
