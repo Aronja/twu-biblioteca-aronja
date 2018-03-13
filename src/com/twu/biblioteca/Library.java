@@ -64,6 +64,7 @@ public class Library {
 
 
     public void checkoutBook() {
+        System.out.println("Type the Title to checkout a book or movie");
         String checkout;
         String Title="";
         Scanner in = new Scanner(System.in);
@@ -77,10 +78,8 @@ public class Library {
             }
         }
 
-        //This does not work yet!!
         if (!Title.equals("")){
             System.out.println("You have checked out a book");
-          //  User.getDetails();
         }
         else {
             System.out.println("This book is not available!");
@@ -96,6 +95,7 @@ public class Library {
 
 
     public void returnBook() {
+        System.out.println("Type the Title to return a book or movie");
         String returnBook;
         String Title ="";
         Scanner in = new Scanner(System.in);

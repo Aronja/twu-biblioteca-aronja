@@ -21,6 +21,7 @@ public class managingUsers {
         for(User user : users){
             if(user.authentication(LibraryNumber, Password)) {
                 currentUser = user;
+                user.getDetails();
                 return true;
             }
         }
