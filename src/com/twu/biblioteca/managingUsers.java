@@ -29,7 +29,7 @@ public class managingUsers {
     }
 
     public User getCurrentUser() {
-        System.out.println(currentUser.getDetails());
+        currentUser.getDetails();
         return currentUser;
     }
 }

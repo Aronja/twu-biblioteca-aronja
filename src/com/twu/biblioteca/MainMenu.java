@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    public String printMenu() {
+    public String printMenu(Library library) {
         System.out.println("Main Menu");
         System.out.println("Would you like to search for Books and Movies? Then type B or M");
 
@@ -13,10 +13,12 @@ public class MainMenu {
 
         bookmenu = in.nextLine();
 
-        if (bookmenu.equals("B")){
+        if (bookmenu.equalsIgnoreCase("B")){
             System.out.println("Booklist");
-        } else if (bookmenu.equals("M")) {
+            library.listOfBooks();
+        } else if (bookmenu.equalsIgnoreCase("M")) {
             System.out.println("Movies");
+            library.listMovies();
         } else {
             System.out.println("Select a valid option! (Please type B to view our Booklist or M to view our Movies!)");
         }

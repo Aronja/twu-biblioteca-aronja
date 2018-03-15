@@ -1,23 +1,15 @@
 package com.twu.biblioteca;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 public class InputTest {
-
-    @Test
-    public void TestWhetherWelcomeMessageIsPrinted() {
-
-        WelcomeMessage message = new WelcomeMessage();
-        String Welcome = null;
-
-        String Message = message.printMessage();
-        assertEquals(Welcome, Message);
-    }
 
     @Test
     public void TestWhetherYprintsAnswer() {
@@ -26,22 +18,6 @@ public class InputTest {
 
         {
             answer = "Y";
-        }
-
-        InputStream in = new ByteArrayInputStream(answer.getBytes());
-        System.setIn(in);
-        String givenAnswer = message.printAnswer();
-
-        assertEquals(answer, givenAnswer);
-    }
-
-    @Test
-    public void TestWhetherQprintsAnswer() {
-        WelcomeMessage message = new WelcomeMessage();
-        String answer;
-
-        {
-            answer = "Q";
         }
 
         InputStream in = new ByteArrayInputStream(answer.getBytes());
@@ -67,6 +43,14 @@ public class InputTest {
         assertEquals(answer, givenAnswer);
     }
 
+    Library library;
+
+    @Before
+    public void serveupMocks() {
+        library = mock(Library.class);
+
+    }
+
 
     @Test
     public void TestWhetherPrintsMainMenuwithB() {
@@ -78,7 +62,7 @@ public class InputTest {
 
         InputStream in = new ByteArrayInputStream(answer.getBytes());
         System.setIn(in);
-        String givenAnswer = mainmenu.printMenu();
+        String givenAnswer = mainmenu.printMenu(library);
 
         assertEquals(answer, givenAnswer);
     }
@@ -93,7 +77,7 @@ public class InputTest {
 
         InputStream in = new ByteArrayInputStream(answer.getBytes());
         System.setIn(in);
-        String givenAnswer = mainmenu.printMenu();
+        String givenAnswer = mainmenu.printMenu(library);
 
         assertEquals(answer, givenAnswer);
     }

@@ -63,7 +63,7 @@ public class Library {
 
 
 
-    public void checkoutBook() {
+    public void checkoutBook(managingUsers Manager) {
         System.out.println("Type the Title to checkout a book or movie");
         String checkout;
         String Title="";
@@ -80,7 +80,6 @@ public class Library {
 
         if (!Title.equals("")){
             System.out.println("You have checked out a book");
-            managingUsers Manager = new managingUsers();
             Manager.getCurrentUser();
         }
         else {
@@ -96,7 +95,7 @@ public class Library {
     }
 
 
-    public void returnBook() {
+    public void returnBook(managingUsers Manager) {
         System.out.println("Type the Title to return a book or movie");
         String returnBook;
         String Title ="";
@@ -113,7 +112,6 @@ public class Library {
 
         if (!Title.equals("")){
             System.out.println("You have returned a book");
-            managingUsers Manager = new managingUsers();
             Manager.getCurrentUser();
         }
         else {

@@ -13,16 +13,15 @@ public class BibliotecaApp {
     public void run() {
         WelcomeMessage message = new WelcomeMessage();
         message.printMessage();
-        message.printAnswer();
-        setupLogin();
+        managingUsers Manager = setupLogin();
         MainMenu mainmenu = new MainMenu();
-        mainmenu.printMenu();
         Library library = setUpLibrary();
-        library.checkoutBook();
-        library.returnBook();
+        mainmenu.printMenu(library);
+        library.checkoutBook(Manager);
+        library.returnBook(Manager);
     }
 
-    private void setupLogin() {
+    private managingUsers setupLogin() {
         managingUsers Manager = setupUser();
         String libraryNumber = getLibraryNumber();
         String password = getPassword();
@@ -33,6 +32,7 @@ public class BibliotecaApp {
         } else {
             System.out.println("Thanks, you are logged in!");
         }
+        return Manager;
     }
 
     private Library setUpLibrary() {
@@ -42,8 +42,6 @@ public class BibliotecaApp {
         Movie m1 = new Movie("Lord of the Rings", "Peter Jackson", "10", 2001);
         Movie m2 = new Movie ("Fight Club", "David Fincher", "8", 1999);
         library.addItems(b1, b2, m1, m2);
-        library.listOfBooks();
-        library.listMovies();
         return library;
     }
 
